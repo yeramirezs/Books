@@ -1,4 +1,8 @@
 Books::Application.routes.draw do
+  get "search/search"
+
+  get "ranking_controller/ranking"
+
   resources :books
 
   # The priority is based upon order of creation:
