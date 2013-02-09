@@ -4,6 +4,7 @@ gem 'rails', '3.2.1'
 
 group :development do
 	gem 'sqlite3', '1.3.5'
+	gem "will_paginate", "~> 3.0.4"
 end
 
 group :development, :test do

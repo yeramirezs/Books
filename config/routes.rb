@@ -1,5 +1,7 @@
 Books::Application.routes.draw do
 
+  get "result/result"
+
   get "search/search"
 
   get "ranking_controller/ranking"
@@ -8,7 +10,7 @@ Books::Application.routes.draw do
 
   root  to: 'search#search'
 
-  match '/search', to: 'search#search', :as => 'search'
+  match '/result', to: 'result#result', :as => 'result'
 
   match '/buscar' => 'search#buscar', :as => 'buscar'
 

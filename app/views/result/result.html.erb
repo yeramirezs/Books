@@ -177,6 +177,8 @@
         margin-bottom: 5px;
       }
 
+      table.myTable { border-collapse:collapse; }
+      table.myTable td, table.myTable th { border:1px solid black;padding:5px; }
 
     </style>
     <script type="text/javascript" src="javascripts/prototype.js"></script>
@@ -185,26 +187,33 @@
   <body>
     <div id="page">
         <div>
-            <table>
-                <tr><td>&nbsp;</td></tr>
-                <tr><td>&nbsp;</td></tr>
-                <p><%= form_tag result_path, :method => 'get' do %>
-	                  <tr>
-	                      <td><h1>Busqueda de libro</h1></td>
-	                  </tr>
-	                  <tr><td>&nbsp;</td></tr>
-	                  <tr>
-	                      <td> <%= text_field_tag :busqueda, params[:busqueda] %></td>
-	                  </tr>
-	                  <tr><td>&nbsp;</td></tr>
-	                  <tr><td><%= submit_tag "Buscar", :name => 'busquedaSimple'%> </tr></td>
-	                <% end %>
-                </td></tr>
-            </table>
+            <table class="myTable">
+            	<tr><h1>Search Result</h1></tr>
+			  <tr>
+			    <td><b>Name</b></td>
+			    <td><b>Author</b></td>
+			    <td><b>Isbn</b></td>
+			    <td><b>Total Ranking</b></td>
+			    <td><b>Opciones</b></td>
+			  </tr>
+			<% @books.each do |book| %>
+			  <tr>
+			  	<%= form_tag result_path, :method => 'get' do %>
+			    <td><%= book.name %></td>
+			    <td><%= book.author %></td>
+			    <td><%= book.isbn %></td>
+			    <td><%= book.totalRanking %></td>
+			    <td><%= submit_tag "Rank Book", :name => book.id%> </td>
+			    <% end %>
+			  </tr>
+			<% end %>
+			</table>
         </div>
       <div id="footer">&nbsp;</div>
     </div>
   </body>
 </html>
+
+
 
 
