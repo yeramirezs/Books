@@ -201,8 +201,20 @@
                 <tr><td><h1>Resultado</h1></td></tr>
                 <tr>
                   <% if flash[:notice] %>
-                    <div id="notice"><%= flash[:notice] %></div>
+                    <td><div id="notice"><%= flash[:notice] %></div></td>
                   <% end %>
+                  <% if @books %>
+	                  <% @books.each do |book| %>
+					  <tr>
+					    <td><%= book.name %></td>
+					    <td><%= book.author %></td>
+					    <td><%= book.totalRanking %></td>
+					    <td><%= form_tag :controller => 'search', :action => 'buscar', :method => 'get' do %>
+					    	<%= submit_tag "Rank Book", :name => 'rankbook'%> </tr></td>
+						 <% end %></td>
+				      </tr>
+				      <% end %>
+				 <% end %>
                 </td></tr>
             </table>
         </div>
