@@ -1,9 +1,18 @@
 Books::Application.routes.draw do
+
   get "search/search"
 
   get "ranking_controller/ranking"
 
   resources :books
+
+  root  to: 'search#search'
+
+  match '/search', to: 'search#search', :as => 'search'
+
+  match '/buscar' => 'search#buscar', :as => 'buscar'
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
