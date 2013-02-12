@@ -13,6 +13,10 @@ Books::Application.routes.draw do
   match '/result', to: 'result#result', :as => 'result'
 
   match '/buscar' => 'search#buscar', :as => 'buscar'
+  
+  match '/ranking', to: 'ranking_controller#ranking', :as => 'ranking'
+
+  match '/enviarRanking', to: 'ranking_controller#enviarRanking', :as => 'enviarRanking'
 
   
 
