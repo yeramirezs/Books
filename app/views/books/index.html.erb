@@ -1,6 +1,6 @@
 <h1>Listing books</h1>
 
-<table>
+<table#books>
   <tr>
     <th>Name</th>
     <th>Author</th>
@@ -29,3 +29,5 @@
 <br />
 
 <%= link_to 'New Book', new_book_path %>
+<td><%= submit_tag "Rank Book", :name => book.id%> </td>
+

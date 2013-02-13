@@ -21,6 +21,11 @@ class BooksController < ApplicationController
     end
   end
 
+  def rank
+    @book = Book.find( params[:id])
+  end
+
+
   # GET /books/new
   # GET /books/new.json
   def new
@@ -35,6 +40,7 @@ class BooksController < ApplicationController
   # GET /books/1/edit
   def edit
     @book = Book.find(params[:id])
+
   end
 
   # POST /books

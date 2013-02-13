@@ -187,7 +187,7 @@
             <table>
                 <tr><td>&nbsp;</td></tr>
                 <tr><td>&nbsp;</td></tr>
-                <p><%= form_tag :controller => 'ranking_controller', :action => 'enviarRanking', :method => 'get' do %>
+                <p><%= form_tag :controller => 'ranking', :action => 'enviarRanking', :method => 'get' do %>
                   <tr>
                       <td>Puntaje:&nbsp;&nbsp;</td>
                       <td> <%= text_field_tag :puntaje, params[:puntaje] %></td>
@@ -195,7 +195,7 @@
                   
                   <tr><td>&nbsp;</td></tr>
                   <tr><td colspan="2"><h1>Votacion</h1></td></tr>
-                  <tr><td><%= submit_tag "Enviar Votacion", :name => 'votacion'%> </tr></td>
+                  <tr><td><%= submit_tag "Votar", :name => 'votacion'%> </tr></td>
                   
                 <% end %>
                 <tr><td colspan="2"></td></tr>

@@ -1,10 +1,10 @@
 Books::Application.routes.draw do
 
-  get "result/result"
+#  get "result/result"
 
-  get "search/search"
+#  get "search/search"
 
-  get "ranking_controller/ranking"
+#  get "ranking/ranking"
 
   resources :books
 
@@ -13,12 +13,13 @@ Books::Application.routes.draw do
   match '/result', to: 'result#result', :as => 'result'
 
   match '/buscar' => 'search#buscar', :as => 'buscar'
-  
-  match '/ranking', to: 'ranking_controller#ranking', :as => 'ranking'
 
-  match '/enviarRanking', to: 'ranking_controller#enviarRanking', :as => 'enviarRanking'
+  match '/ranking/califique', to: 'ranking#califique', :as => 'califique'
 
-  
+  match '/ranking/:id', to: 'ranking#ranking', :as => 'ranking'
+
+  match '/enviarRanking', to: 'ranking#enviarRanking', :as => 'enviarRanking'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
